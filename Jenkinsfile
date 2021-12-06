@@ -26,7 +26,7 @@ pipeline {
                     steps {
                         bat '''
                             set PYTHONPATH=%WORKSPACE%
-                            pytest --junitxml=result-unit.xml test\\unit
+                            python -m pytest --junitxml=result-unit.xml test\\unit
                         '''
                     }
                 }
@@ -38,7 +38,7 @@ pipeline {
                             start flask run
                             start java -jar C:\\Users\\chuss\\Desktop\\UNIR\\Devops\\Ejercicios\\wiremock\\wiremock-jre8-standalone-2.32.0.jar --port 9090 --root-dir C:\\Users\\chuss\\Desktop\\UNIR\\Devops\\Ejercicios\\wiremock
                             set PYTHONPATH=%WORKSPACE%
-                            pytest --junitxml=result-rest.xml test\\rest
+                            python -m pytest --junitxml=result-rest.xml test\\rest
                         '''
                     }    
                 }
